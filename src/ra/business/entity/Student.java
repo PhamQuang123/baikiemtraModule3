@@ -1,11 +1,6 @@
 package ra.business.entity;
 
-import ra.presentation.SchoolManagement;
-
-import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.Scanner;
-import java.util.regex.Pattern;
 
 public class Student {
     private int studentId;

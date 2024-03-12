@@ -1,7 +1,5 @@
 package ra.business.entity;
 
-import ra.business.implement.StudentImpl;
-import ra.presentation.SchoolManagement;
 
 public class Mark {
     private int markId;

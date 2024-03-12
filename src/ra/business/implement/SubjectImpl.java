@@ -5,13 +5,9 @@ import ra.business.entity.Subject;
 import ra.presentation.SchoolManagement;
 
 import java.util.List;
-import java.util.Scanner;
 import java.util.regex.Pattern;
 
 public class SubjectImpl implements IOData<Subject> {
-    static Scanner scanner = new Scanner(System.in);
-
-
     @Override
     public List<Subject> inputData() {
         Subject subject = new Subject();
@@ -23,7 +19,10 @@ public class SubjectImpl implements IOData<Subject> {
 
     @Override
     public void displayData() {
-
+        for (int i = 0; i < SchoolManagement.listSubject.size(); i++) {
+            System.out.printf("Mã môn học: %s - Tên môn học: %s \n",
+                    SchoolManagement.listSubject.get(i).getSubjectId(), SchoolManagement.listSubject.get(i).getSubjectName());
+        }
     }
 
     public static String inputSubjectId() {
@@ -49,7 +48,7 @@ public class SubjectImpl implements IOData<Subject> {
     }
 
     public static String inputSubjectName() {
-        System.out.println("Nhập tên học:");
+        System.out.println("Nhập tên môn học:");
         do {
             String subjectNamedInp = scanner.nextLine();
             if (subjectNamedInp.length() != 0) {

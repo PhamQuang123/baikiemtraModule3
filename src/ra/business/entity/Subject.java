@@ -1,11 +1,5 @@
 package ra.business.entity;
 
-import ra.business.implement.StudentImpl;
-import ra.presentation.SchoolManagement;
-
-import java.util.Scanner;
-import java.util.regex.Pattern;
-
 public class Subject {
     private String subjectId;
     private String subjectName;

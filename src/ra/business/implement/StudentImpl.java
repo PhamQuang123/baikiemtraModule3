@@ -3,7 +3,6 @@ package ra.business.implement;
 import ra.business.design.IOData;
 import ra.business.entity.Student;
 import ra.presentation.SchoolManagement;
-
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
@@ -11,8 +10,6 @@ import java.util.Scanner;
 import java.util.regex.Pattern;
 
 public class StudentImpl implements IOData<Student> {
-
-   static Scanner scanner =new Scanner(System.in);
     @Override
     public List<Student> inputData() {
 
@@ -30,6 +27,14 @@ public class StudentImpl implements IOData<Student> {
 
     @Override
     public void displayData() {
+        for (int i = 0; i < SchoolManagement.listStudents.size(); i++) {
+            System.out.printf("Mã học sinh: %d - Tên học sinh: %s - Ngày sinh: %s\n",
+                    SchoolManagement.listStudents.get(i).getStudentId(), SchoolManagement.listStudents.get(i).getStudentName(),
+                    SchoolManagement.listStudents.get(i).getBirthDay());
+            System.out.printf("Địa chỉ: %s - Giới tính: %s - Số điện thoại: %s\n",
+                    SchoolManagement.listStudents.get(i).getAddress(), SchoolManagement.listStudents.get(i).isGender()? "Nam":"Nữ",
+                    SchoolManagement.listStudents.get(i).getPhone());
+        }
 
     }
     public static int inputStudenId() {
@@ -84,7 +89,7 @@ public class StudentImpl implements IOData<Student> {
         System.out.println("Nhập giới tính:");
         do {
             String genderInp = scanner.nextLine();
-            if (genderInp == "true" || genderInp == "false") {
+            if (genderInp.equals("true")  || genderInp.equals("false") ) {
                 return Boolean.parseBoolean(genderInp);
             }else {
                 System.err.println("Chỉ nhận giá trị true/false, vui lòng nhập lại");
