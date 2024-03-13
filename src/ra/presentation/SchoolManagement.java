@@ -220,7 +220,7 @@ public class SchoolManagement {
             System.out.println("Cập nhật tên môn học:");
             listSubject.get(indexUpdate).setSubjectName(objSubjectImpl.inputSubjectName());
         }else {
-            System.err.println("Môn học không tồn tại");
+            System.err.println("\n Môn học không tồn tại");
         }
     }
     public static int findIndexUpdateSubjectById(String id){
@@ -236,7 +236,7 @@ public class SchoolManagement {
         String deleteId = IOData.scanner.nextLine();
         int indexDelete = findIndexUpdateSubjectById(deleteId);
         if (indexDelete >=0) {
-            if (listMark.stream().anyMatch(mark -> mark.getSubject().getSubjectId() == deleteId)) {
+            if (listMark.stream().anyMatch(mark -> mark.getSubject().getSubjectId().equals(deleteId))) {
                 System.err.println("Không thể xoá môn học");
             }else {
                 listSubject.remove(indexDelete);
@@ -283,6 +283,7 @@ public class SchoolManagement {
                     break;
                 case 7:
                     isExit = false;
+                    break;
                 default:
                     System.err.println("Vui òng chọn từ 1-7");
             }

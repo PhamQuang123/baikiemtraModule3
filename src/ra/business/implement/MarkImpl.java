@@ -75,7 +75,6 @@ public class MarkImpl implements IOData<Mark> {
     }
 
     public Student inputStudent() {
-//        do {
         if (SchoolManagement.listStudents.size() > 0) {
             System.out.println("Danh sách học sinh:");
             for (int i = 0; i < SchoolManagement.listStudents.size(); i++) {
@@ -86,15 +85,10 @@ public class MarkImpl implements IOData<Mark> {
             return SchoolManagement.listStudents.get(choice - 1);
         } else {
             System.err.println("Chưa nhập thông tin học sinh");
-//                break;
         }
-//        } while (true);
         return null;
     }
-
     public Subject inputSubject() {
-
-//        do {
         if (SchoolManagement.listSubject.size() > 0) {
             System.out.println("Danh sách môn học:");
             for (int i = 0; i < SchoolManagement.listSubject.size(); i++) {
@@ -106,7 +100,6 @@ public class MarkImpl implements IOData<Mark> {
         } else {
             System.err.println("Chưa nhập thông tin môn học");
         }
-//        } while (true);
         return null;
     }
 }
